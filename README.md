@@ -2,6 +2,8 @@
 
 In this project, a clock is to be developed which displays the time in binary notation. The clock should use to format hh:mm:ss. Additionally, a countdown mode should be integrated.
 
+![board](docs/board.png)
+
 ## Design Phase
 
 - [x] Forming of groups of two and Selection of one topic in the Moodle task above
