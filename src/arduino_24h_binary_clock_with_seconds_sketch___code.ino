@@ -1,14 +1,6 @@
-// Arduino 24h Binary Clock with Seconds. (17 LEDs total)
-// You can find a demonstration video of this project
-// here on Youtube: https://www.youtube.com/watch?v=R1rWMhTKyh0
-// Full project on Hackter.io : https://www.hackster.io/peter-lunk/arduino-24h-binary-clock-with-seconds-17-leds-total-2c2374
-// Greetings, MrLunk
 // This clock does not (yet) synchronise with any time server and does not use a real clock module to stay exactly on time (yet).
-
 // It just runs a basic seconds count with a 1000 millisecond delay in the sketch. LEDs are connected to PWM 3 to 19 with a resistor each.
-
-// Note that: PWM pins 14 to 19 are the Analog pins 0 to 5.
-
+// PWM pins 14 to 19 are the Analog pins 0 to 5.
 // pins 2 - 13 are the regular digital pwm pins.
 int ledPinsSec[] = {2, 3, 4, 5, 6, 7};
 int ledPinsMin[] = {8, 9, 10, 11, 12, 13};
