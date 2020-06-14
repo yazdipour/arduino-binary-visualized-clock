@@ -9,5 +9,6 @@ In this project, a clock is to be developed which displays the time in binary no
 - 17 x Resistor 100 ohm
 - 18 x Wire
 - Breadboard
+- Button/Switch and Wire for them (Does it going to fit on the board?)
 
 ![board](docs/board.png)
