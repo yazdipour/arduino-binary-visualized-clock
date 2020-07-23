@@ -1,28 +1,19 @@
 int ledPinsSec[] = {2, 3, 4, 5, 6, 7};
 int ledPinsMin[] = {8, 9, 10, 11, 12, 13};
 int ledPinsHr[] = {14, 15, 16, 17, 18, 19};
-int countS = 0;   // Seconds
-int countM = 13;  // Minutes
-int countH = 23;  // Hours
+int countS = 50;
+int countM = 59;
+int countH = 23;
 
 byte countSec;
 byte countMin;
 byte countHr;
-#define nBitsSec sizeof(ledPinsSec)/sizeof(ledPinsSec[0])
-#define nBitsMin sizeof(ledPinsMin)/sizeof(ledPinsMin[0])
-#define nBitsHr sizeof(ledPinsHr)/sizeof(ledPinsHr[0])
 
 void setup(void)
 {
-  for (byte i = 0; i < nBitsSec; i++) {
+  for (byte i = 0; i < 6; i++) {
     pinMode(ledPinsSec[i], OUTPUT);
-  }
-
-  for (byte i = 0; i < nBitsMin; i++) {
     pinMode(ledPinsMin[i], OUTPUT);
-  }
-
-  for (byte i = 0; i < nBitsHr; i++) {
     pinMode(ledPinsHr[i], OUTPUT);
   }
 }
@@ -47,32 +38,17 @@ void loop(void)
     }
   }
 
-  dispBinarySec(countS);
-  dispBinaryMin(countM);
-  dispBinaryHr(countH);
-
+  disp(countS,countM,countH);
   delay(1000);
 }
 
-void dispBinarySec(byte nSec)
+void disp(byte nSec, byte nMin, byte nHr)
 {
-  for (byte i = 0; i < nBitsSec; i++) {
+  for (byte i = 0; i < 6; i++) {
     digitalWrite(ledPinsSec[i], nSec & 1);
     nSec /= 2;
-  }
-}
-
-void dispBinaryMin(byte nMin)
-{
-  for (byte i = 0; i < nBitsMin; i++) {
     digitalWrite(ledPinsMin[i], nMin & 1);
     nMin /= 2;
-  }
-}
-
-void dispBinaryHr(byte nHr)
-{
-  for (byte i = 0; i < nBitsHr; i++) {
     digitalWrite(ledPinsHr[i], nHr & 1);
     nHr /= 2;
   }
